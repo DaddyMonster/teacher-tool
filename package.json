@@ -1,0 +1,21 @@
+{
+  "name": "gql-codegen-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "graphql:codegen": "graphql codegen",
+    "graphql:coverage": "graphql coverage",
+    "graphql:validate": "graphql validate"
+  },
+  "devDependencies": {
+    "graphql-cli": "4.1.0",
+    "@graphql-cli/codegen": "1.17.13",
+    "@graphql-cli/coverage": "2.1.0",
+    "@graphql-cli/validate": "2.1.0",
+    "@graphql-codegen/typescript": "1.17.11",
+    "@graphql-codegen/typescript-operations": "^1.17.9",
+    "@graphql-codegen/typescript-react-apollo": "2.1.1",
+    "@graphql-codegen/typescript-resolvers": "1.17.10"
+  }
+}

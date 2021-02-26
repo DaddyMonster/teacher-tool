@@ -1,0 +1,32 @@
+# 아래 예시는 로컬에서 실행된 그래프큐엘 서버에서 instropect, shema를 받아
+# 자동으로 TS - React - Apollo 타입 및 쿼리를 codegen : generates 에 작성된 경로로 생성해줌
+
+# 아래 VS-code Extension 과 설치하면 이 파일을 읽고 Auto-complete/린트 해줌
+# graphql.vscode-graphql
+# kumar-harsh.graphql-for-vscode
+
+
+# 사용법 
+# 0. 본 파일 및 package.json의 위치는 서버나 클라이언트 루트와 분리하는게 좋은듯 함.
+# 1. package.json dependency 설치
+# 2. 그래프큐얼 서버가 실행된 상태에서 graphql:codegen 스크립트 실행
+# 3. documents 가 변경될때마다 아래 자동완성 경로에 파일이 생성됨 (1 회성 사용하고 싶으면 watch를 false)
+# 4. 클라이언트 루트의 package.json 스크립트에 --prefix 를 사용해 실행하면 편함
+# 5. 다른 기능들은 https://graphql-cli.com 여기서 확인.
+
+
+
+rewrite: true
+# 아래 주소를 그래프큐엘 서버 주소로 설정
+schema: "http://localhost:8888/graphql"
+documents: clients/default/src/**/*.graphql
+extensions:
+  codegen:
+    generates:
+      # 클라이언트쪽 자동완성 경로
+      clients/default/src/generated/gql.tsx:
+        plugins:
+          - typescript
+          - typescript-operations
+          - typescript-react-apollo
+    watch: true
