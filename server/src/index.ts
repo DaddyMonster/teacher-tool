@@ -30,7 +30,7 @@ const main = async () => {
 
   app.use(graphqlUploadExpress());
 
-  const origins = [process.env.CORS_ORIGIN!];
+  const origins = [process.env.CORS_ORIGIN1!];
   app.use(cors({ origin: origins, credentials: true }));
   app.use(compression());
   app.set("trust proxy", 1);

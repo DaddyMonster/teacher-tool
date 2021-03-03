@@ -1,0 +1,46 @@
+mutation AnalyseVocabProun($input: AnalyseVocabPronArgs!, $file: Upload!) {
+  analyseVocabPron(audFile: $file, input: $input) {
+    status
+    text_score {
+      ...TextScoreInfo
+    }
+  }
+}
+
+fragment TextScoreInfo on AudAnalysisResult {
+  text
+  quality_score
+  word_score_list {
+    ...WordScoreInfo
+  }
+  fidelity_class
+}
+
+fragment WordScoreInfo on WordScore {
+  word
+  quality_score
+  phone_score_list {
+    ...PhoneScoreInfo
+  }
+  syllable_score_list {
+    ...SyllableScoreInfo
+  }
+}
+
+fragment PhoneScoreInfo on PhoneScore {
+  stress_level
+  extent
+  quality_score
+  stress_score
+  phone
+  sound_most_like
+}
+
+fragment SyllableScoreInfo on SyllableScore {
+  stress_level
+  extent
+  quality_score
+  stress_score
+  phone_count
+  letters
+}
