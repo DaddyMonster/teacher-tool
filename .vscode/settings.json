@@ -1,0 +1,5 @@
+{
+  "graphql-config.load.rootDir": ".",
+  "graphql-config.load.filePath": ".graphqlrc.yml",
+  "graphqlForVSCode.nodePath": "node_modules"
+}
