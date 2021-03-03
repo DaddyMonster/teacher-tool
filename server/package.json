@@ -13,7 +13,7 @@
     "deploy": "npm run compile && gcloud app deploy --quite"
   },
   "dependencies": {
-    "@bit/hessed.server.errors": "^0.0.1",
+    "@bit/hessed.server.errors": "^0.0.2",
     "@typegoose/typegoose": "^7.4.8",
     "apollo-server": "^2.21.0",
     "apollo-server-express": "^2.21.0",

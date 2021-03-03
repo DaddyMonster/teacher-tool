@@ -5,7 +5,7 @@ import {
   PhoneScoreInfoFragment,
   SyllableScoreInfoFragment,
   TextScoreInfoFragment,
-} from "../src/generated/gql";
+} from "../generated/gql";
 import { ColorOptionUnion } from "@bit/hessed.engspark.atoms/dist/styles/theme/palette.override";
 import { JustTypo } from "@bit/hessed.engspark.atoms";
 import { blue, green, red } from "@material-ui/core/colors";

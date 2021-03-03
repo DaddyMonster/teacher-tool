@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef } from "react";
 import {
   TextScoreInfoFragment,
   useAnalyseVocabProunMutation,
-} from "../../src/generated/gql";
+} from "../../generated/gql";
 
 interface Props {
   text: string;
