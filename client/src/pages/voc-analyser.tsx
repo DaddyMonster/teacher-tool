@@ -10,6 +10,7 @@ import { useTestConnectionQuery } from "../generated/gql";
 import { MyPageType } from "../types/AppPageType";
 import { AiTwotoneSound } from "react-icons/ai";
 import { MdFiberManualRecord } from "react-icons/md";
+import useHowler from "../component/hooks/useHowler";
 
 const VocAnalyser: MyPageType = () => {
   const [txt, settxt] = useState("");
@@ -49,6 +50,9 @@ const VocAnalyser: MyPageType = () => {
     reset();
     settxt("");
   };
+
+  const {} = useHowler({ source: "" });
+
   return (
     <Root>
       <JustTypo sz="sm">{`Connection : ${connected}`}</JustTypo>
@@ -67,7 +71,7 @@ const VocAnalyser: MyPageType = () => {
             className="mr-3"
             bgUnion="secondary"
             startIcon={<AiTwotoneSound />}
-            onClick={() => start()}
+            onClick={() => {}}
           >
             발음 듣기
           </JustButtonC>
