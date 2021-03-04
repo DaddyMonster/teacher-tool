@@ -8,6 +8,8 @@ import SoundDisplay from "../component/SoundDisplay";
 import TextDisplay from "../component/TextDisplay";
 import { useTestConnectionQuery } from "../generated/gql";
 import { MyPageType } from "../types/AppPageType";
+import { AiTwotoneSound } from "react-icons/ai";
+import { MdFiberManualRecord } from "react-icons/md";
 
 const VocAnalyser: MyPageType = () => {
   const [txt, settxt] = useState("");
@@ -60,9 +62,24 @@ const VocAnalyser: MyPageType = () => {
         </div>
       )}
       {!recording && (
-        <JustButtonC bgUnion="primary" onClick={() => start()}>
-          녹음 시작
-        </JustButtonC>
+        <div className="flex">
+          <JustButtonC
+            className="mr-3"
+            bgUnion="secondary"
+            startIcon={<AiTwotoneSound />}
+            onClick={() => start()}
+          >
+            발음 듣기
+          </JustButtonC>
+
+          <JustButtonC
+            bgUnion="primary"
+            onClick={() => start()}
+            startIcon={<MdFiberManualRecord />}
+          >
+            녹음 시작
+          </JustButtonC>
+        </div>
       )}
       <div className="w-full flex justify-center p-3">
         <JustButtonT onClick={resetStates}>리셋</JustButtonT>
